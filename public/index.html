@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lunar Birthday Calendar Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <script src='bundle.js'></script>
+
+</head>
+
+<body>
+<br>
+
+<div class="container">
+
+  <div class="jumbotron">
+    <h1>Lunar Birthday Calendar Generator</h1>
+    <br>
+    <p>Google Calendar/Outlook does not allow you to create recurring events based on lunar calendar (e.g. Grandma/Grandpa's birthdays.)</p>
+    <p>This little tool generates an ICS calendar file for you.  You can then import the generated ICS file into <a href="https://calendar.google.com">Google Calendar</a>/<a href="https://outlook.office365.com/owa/?path=/calendar">Outlook</a> so it's easy to remember when to call/visit them on their birthdays 🎂</p> 
+    <p>[Credits: <a href='https://www.npmjs.com/package/lunar-birthday-calendar'>lunar-birthday-calendar</a> component]</p> 
+    <p>Have an idea? You can reach me at <a href="mailto:billylo1@gmail.com">billylo1@gmail.com</a>.</p> 
+
+  </div>
+  <form onsubmit="MyApp.generateICSFile();">
+    <div class="form-group row">
+      <div class='col-sm-2'>
+        <label for="month">Lunar Month:</label>
+        <select class="form-control" id="month">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>                    
+        </select>
+      </div>
+      <div class='col-sm-2'>
+        <label for="day">Lunar Day:</label>
+        <select class="form-control" id="day">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>        
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>             
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>               
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>        
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>             
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>               
+            <option>29</option>
+            <option>30</option>        
+          </select>
+      </div>
+      <div class='col-sm-8'>
+          <label for="eventname">Event Description:</label>
+          <input class="form-control" id="eventname" value="Grandma's Birthday"></input>
+      </div>
+    </div>
+    <div class="form-group row">
+        <div class='col-sm-12'>
+          <button type="submit" class="btn btn-primary">Generate</button>
+        </div>
+    </div>
+</form>
+</div>
+
+<!-- MyApp.generateICSFile(); -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>
