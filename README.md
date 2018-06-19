@@ -1,4 +1,4 @@
-Lunar Birthday Calendar Generator
+Lunar Birthday Calendar Generator (https://lunar-birthday-calendar-web.firebaseapp.com)
 
 Google Calendar/Outlook does not allow you to create recurring events based on lunar calendar (e.g. Grandma/Grandpa's birthdays.)
 
