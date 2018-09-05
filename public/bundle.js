@@ -34,7 +34,7 @@ function generateICSFileBatchMode() {
             let inputMonth = Number(fields[0]);
             let inputDay = Number(fields[1]);
             let eventName = fields[2];
-            let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 2};
+            let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 100};
             argsArray.push(args);
         }
     }    
