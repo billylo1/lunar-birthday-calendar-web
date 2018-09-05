@@ -8,7 +8,8 @@ function generateICSFile() {
     let eventName = document.getElementById('eventname').value;
 
     let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 100};
-    let cal = lbc.generateCalendar(args);
+    let argsArray = [args];
+    let cal = lbc.generateCalendar(argsArray);
     
     // console.log(cal.toString());
     
@@ -22,11 +23,39 @@ function generateICSFile() {
 
 }
 
+function generateICSFileBatchMode() {
+
+    let csvContent = document.getElementById('csvContent').value;
+    let lines = csvContent.split('\n');
+    let argsArray = [];
+    for (var i = 0; i < lines.length; i++) {
+        let fields = lines[i].split(',');
+        if (fields.length == 3) {
+            let inputMonth = Number(fields[0]);
+            let inputDay = Number(fields[1]);
+            let eventName = fields[2];
+            let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 2};
+            argsArray.push(args);
+        }
+    }    
+    // console.log(argsArray);
+
+    let cal = lbc.generateCalendar(argsArray);
+    
+    // console.log(cal);
+    
+    let hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/calendar;charset=utf-8,' + encodeURI(cal);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'lunar.ics';
+    hiddenElement.click();
+
+    alert('lunar.ics file has been saved successfully.');
+
+}
 module.exports = {
-    generateICSFile
+    generateICSFile, generateICSFileBatchMode
 };
-
-
 },{"lunar-birthday-calendar":37}],2:[function(require,module,exports){
 'use strict';
 
@@ -3221,39 +3250,45 @@ function formatSolarDate(solar) {
     return (`${year}-${month}-${day}`);
 }
 
-function generateCalendar(args) {
-    var currentYear = +new Date().getFullYear();
-    var lunarBirthday = new Lunar(
-        currentYear - 1, +args.lunar_month, +args.lunar_day,
-        args['leep']
-    );
-    var calculateYearsCount = +args.count;
-    var name = args.name;
-    var summary = `${name}`;
+function generateCalendar(argsArray) {
+
     var cal = ical({
-        // domain: 'bluishoul.com', 
-        name: summary});
-    // cal.timezone('Asia/Shanghai');
-    for (var i = 0; i < calculateYearsCount; i++) {
-        lunarBirthday.lunarYear = lunarBirthday.lunarYear + 1;
-        var solarBirthday = converter.LunarToSolar(lunarBirthday);
+        name: "summary"});
 
-        var solarStartDate = moment(
-            formatSolarDate(solarBirthday)
-        ).hours(9).minutes(0).seconds(0).toDate();
-        // var solarEndDate = moment(
-        //    formatSolarDate(solarBirthday)
-        // ).hours(9).minutes(30).seconds(0).toDate();
+    console.log(argsArray);
 
-        cal.createEvent({
-            start: solarStartDate,
-            allDay: true,
-            // end: solarEndDate,
-            timestamp: new Date(),
-            summary,
-            description: `${name}`,
-            // location: 'Home'
-        });
+    for (var argIndex = 0; argIndex < argsArray.length; argIndex++) {
+        var args = argsArray[argIndex];
+        var currentYear = +new Date().getFullYear();
+        var lunarBirthday = new Lunar(
+            currentYear - 1, +args.lunar_month, +args.lunar_day,
+            args['leep']
+        );
+        var calculateYearsCount = +args.count;
+        var name = args.name;
+        var summary = `${name}`;
+        console.log(name);
+        for (var i = 0; i < calculateYearsCount; i++) {
+            lunarBirthday.lunarYear = lunarBirthday.lunarYear + 1;
+            var solarBirthday = converter.LunarToSolar(lunarBirthday);
+
+            var solarStartDate = moment(
+                formatSolarDate(solarBirthday)
+            ).hours(9).minutes(0).seconds(0).toDate();
+            // var solarEndDate = moment(
+            //    formatSolarDate(solarBirthday)
+            // ).hours(9).minutes(30).seconds(0).toDate();
+
+            cal.createEvent({
+                start: solarStartDate,
+                allDay: true,
+                // end: solarEndDate,
+                timestamp: new Date(),
+                summary,
+                description: `${name}`,
+                // location: 'Home'
+            });
+        }
     }
     return cal;
 }
