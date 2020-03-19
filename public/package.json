@@ -1,0 +1,55 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "argparse": {
+      "version": "1.0.10",
+      "resolved": "https://registry.npmjs.org/argparse/-/argparse-1.0.10.tgz",
+      "integrity": "sha1-vNZ5HqWuCXJeF+WtmIE0zUCz2RE=",
+      "requires": {
+        "sprintf-js": "~1.0.2"
+      }
+    },
+    "bootstrap": {
+      "version": "4.4.1",
+      "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.4.1.tgz",
+      "integrity": "sha512-tbx5cHubwE6e2ZG7nqM3g/FZ5PQEDMWmMGNrCUBVRPHXTJaH7CBDdsLeu3eCh3B1tzAxTnAbtmrzvWEvT2NNEA=="
+    },
+    "bootswatch": {
+      "version": "4.4.1",
+      "resolved": "https://registry.npmjs.org/bootswatch/-/bootswatch-4.4.1.tgz",
+      "integrity": "sha512-Kx3z6+3Jpg9g6l/xZBCnc8d6KeJK0QawxCZWOomdcI5AuSZLZb+DoH5X9RJH+cOcSeMAxyzdIjkVUR01+Db5bQ=="
+    },
+    "ical-generator": {
+      "version": "0.2.10",
+      "resolved": "https://registry.npmjs.org/ical-generator/-/ical-generator-0.2.10.tgz",
+      "integrity": "sha1-89kSAUEcY7JphbfFm9XtkYAQhO8="
+    },
+    "lodash": {
+      "version": "4.17.10",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.10.tgz",
+      "integrity": "sha1-G3eTz3JZ6jj7NmHU04syYK+K5Oc="
+    },
+    "lunar-birthday-calendar": {
+      "version": "0.1.11",
+      "resolved": "https://registry.npmjs.org/lunar-birthday-calendar/-/lunar-birthday-calendar-0.1.11.tgz",
+      "integrity": "sha1-W5DVV8ScI5V2I/FePoykpJ5YUjM=",
+      "requires": {
+        "argparse": "^1.0.7",
+        "ical-generator": "^0.2.7",
+        "lodash": "^4.15.0",
+        "moment": "^2.14.1"
+      }
+    },
+    "moment": {
+      "version": "2.22.2",
+      "resolved": "https://registry.npmjs.org/moment/-/moment-2.22.2.tgz",
+      "integrity": "sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y="
+    },
+    "sprintf-js": {
+      "version": "1.0.3",
+      "resolved": "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz",
+      "integrity": "sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw="
+    }
+  }
+}

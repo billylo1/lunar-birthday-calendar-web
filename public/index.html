@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Lunar Birthday Calendar Generator</title>
+  <title>Lunar Birthday Calendar Generator - v0.2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     crossorigin="anonymous">
   <script src='bundle.js'></script>
 
@@ -27,7 +27,7 @@
     <p>Google Calendar/Outlook does not allow you to create recurring events based on lunar calendar (e.g. Grandma/Grandpa's birthdays.)</p>
     <p>This little tool generates an ICS calendar file for you.  You can then import the generated ICS file into <a href="https://calendar.google.com">Google Calendar</a>/<a href="https://outlook.office365.com/owa/?path=/calendar">Outlook</a> so it's easy to remember when to call/visit them on their birthdays 🎂</p> 
     <p>[Credits: <a href='https://www.npmjs.com/package/lunar-birthday-calendar'>lunar-birthday-calendar</a> component]</p> 
-    <p>Have an idea? You can reach me at <a href="mailto:billy@evergreen-labs.com">billy@evergreen-lab.com</a>.</p> 
+    <p>Have an idea? You can reach me at <a href="mailto:billy@evergreen-labs.com">billy@evergreen-lab.com</a>. (v2020-03-18c)</p> 
 
   </div>
   <form onsubmit="MyApp.generateICSFile();">
@@ -91,7 +91,7 @@
     </div>
     <div class="form-group row">
         <div class='col-sm-12'>
-          <button type="submit" class="btn btn-primary">Generate</button>
+          <button type="submit" class="btn btn-primary">Generate using Lunar date</button>
         </div>
     </div>
 </form>
@@ -117,10 +117,14 @@
 <!-- MyApp.generateICSFile(); -->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 
