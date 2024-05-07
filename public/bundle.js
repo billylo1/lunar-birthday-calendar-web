@@ -7,7 +7,7 @@ function generateICSFile() {
     let inputDay = Number(document.getElementById('day').value);
     let eventName = document.getElementById('eventname').value;
 
-    let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 100};
+    let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 60};
     let argsArray = [args];
     let cal = lbc.generateCalendar(argsArray);
     
