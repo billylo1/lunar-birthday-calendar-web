@@ -7,7 +7,7 @@ function generateICSFile() {
     let inputDay = Number(document.getElementById('day').value);
     let eventName = document.getElementById('eventname').value;
 
-    let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 30};
+    let args = {lunar_month: inputMonth, lunar_day: inputDay, name: eventName, count: 100};
     let argsArray = [args];
     let cal = lbc.generateCalendar(argsArray);
     
@@ -2438,13 +2438,13 @@ function createPadding(length, chars) {
 module.exports = createPadding;
 
 },{"./_baseRepeat":14,"./_baseToString":16,"./_castSlice":17,"./_hasUnicode":21,"./_stringSize":24,"./_stringToArray":25}],19:[function(require,module,exports){
-(function (global){
+(function (global){(function (){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
 module.exports = freeGlobal;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],20:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
